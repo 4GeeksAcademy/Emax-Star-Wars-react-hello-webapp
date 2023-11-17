@@ -13,7 +13,7 @@ export const SingleCharacter = props => {
 
 				<div className="left">
 
-					<img src="https://piks.eldesmarque.com/bin/esports/2021/05/Carl-Star-wars-skin-brawl-stars.jpg" alt="..." style={{ width: "350px", height: "350px" }}></img>
+					<img src={`https://starwars-visualguide.com/assets/img/characters/${params.uid}.jpg`} alt="..." style={{ width: "400px", height: "400px" }}></img>
 
 
 				</div>

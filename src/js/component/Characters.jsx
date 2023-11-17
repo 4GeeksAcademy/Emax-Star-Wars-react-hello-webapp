@@ -20,7 +20,7 @@ const Characters = () => {
 					<div className="cards mx-5">
 
 						<div className="card mb-5" style={{ width: "20rem" }}>
-							<img src={`https://starwars-visualguide.com/assets/img/characters/${index + 1 <= 17 ? index + 1 == 17 ? 18 : index + 1 : index + 2}.jpg`} className="card-img-top" alt="..." />
+							<img src={`https://starwars-visualguide.com/assets/img/characters/${item.url.split("/")[5]}.jpg`} className="card-img-top" alt="..." />
 							<div className="card-body">
 								<h5 className="card-title">{item.name}</h5>
 								<p className="card-text"> Genero: {item.gender}</p>
@@ -34,12 +34,14 @@ const Characters = () => {
 									>
 										Learn more!
 									</Link>
-									<div className="yellow-container">
+									<button className="yellow-container" onClick={()=> {
+										actions.addFavorite(item.name)
+									}}>
 										<i
 											className="fa-regular fa-heart fa-2xl"
 											style={{ color: "#ff0000" }}
 										></i>
-									</div>
+									</button>
 								</div>
 							</div>
 						</div>

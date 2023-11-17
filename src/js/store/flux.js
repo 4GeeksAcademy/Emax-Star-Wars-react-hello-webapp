@@ -15,7 +15,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 
 			people: [],
-			planets: []
+			planets: [],
+			favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -82,6 +83,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("este es el error", (error))
 
 				}
+			},
+
+			addFavorite: (name)=> {
+				const store = getStore()
+				setStore({ ...store, favorites: [...store.favorites, name] });
+				
+			
 			}
 		}
 

@@ -21,7 +21,7 @@ const Planets = () => {
 					<div className="cards mx-5">
 
 						<div className="card mb-5" style={{ width: "20rem", }}>
-							<img src={`https://starwars-visualguide.com/assets/img/planets/${index + 1 <= 17 ? index + 1 == 17 ? 18 : index + 1 : index + 2}.jpg`} className="card-img-top" alt="..." />
+							<img src={`https://starwars-visualguide.com/assets/img/planets/${item.url.split("/")[5]}.jpg`} className="card-img-top" alt="..." />
 							<div className="card-body">
 								<h5 className="card-title">{item.name}</h5>
 								<p className="card-text"> Climate: {item.climate}</p>
