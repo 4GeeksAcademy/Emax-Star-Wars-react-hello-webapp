@@ -5,6 +5,10 @@ import "../../styles/navbar.css"
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
+	const removeFromFavorites = (nameToRemove) => {
+		const updatedFavorites = store.favorites.filter(name => name !== nameToRemove);
+		actions.updateFavorites(updatedFavorites);
+	};
 	return (
 		<div className="header">
 			<nav className="navbar">
@@ -25,11 +29,11 @@ export const Navbar = () => {
 								Favorites
 							</button>
 							<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-								{store.favorites && store.favorites.length > 0 ? store.favorites.map((name) => {
+								{store.favorites && store.favorites.length > 0 ? store.favorites.map((name, index) => {
 									return (
-										<li className="d-flex align-items-baseline">
+										<li className="d-flex align-items-baseline" key={index}>
 											<p className="dropdown-item px-3" href="#">{name}</p>
-											<i className="fa-solid fa-trash px-3" style={{ color: "#ff000d" }}></i>
+											<i className="fa-solid fa-trash px-3" onClick={() => removeFromFavorites(name)} style={{ color: "#ff000d" }}></i>
 										</li>
 									)
 								})

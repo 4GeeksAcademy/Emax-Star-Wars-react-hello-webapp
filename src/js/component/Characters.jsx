@@ -34,13 +34,10 @@ const Characters = () => {
 									>
 										Learn more!
 									</Link>
-									<button className="yellow-container" onClick={()=> {
+									<button className="button-container" onClick={()=> {
 										actions.addFavorite(item.name)
 									}}>
-										<i
-											className="fa-regular fa-heart fa-2xl"
-											style={{ color: "#ff0000" }}
-										></i>
+									<i class="fa-solid fa-heart fa-2xl corazon" style={{color: "#f90101"}}></i>
 									</button>
 								</div>
 							</div>

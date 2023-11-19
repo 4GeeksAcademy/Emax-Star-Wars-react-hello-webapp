@@ -15,7 +15,6 @@ export const SingleCharacter = props => {
 
 					<img src={`https://starwars-visualguide.com/assets/img/characters/${params.uid}.jpg`} alt="..." style={{ width: "400px", height: "400px" }}></img>
 
-
 				</div>
 
 				<div className="right">
@@ -26,8 +25,6 @@ export const SingleCharacter = props => {
 				</div>
 
 			</div>
-
-
 
 			<hr className="my-4" />
 

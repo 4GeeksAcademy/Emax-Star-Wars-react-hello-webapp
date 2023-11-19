@@ -54,13 +54,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ ...store, people: data.results });
 						console.log(data)
 					}
-
 				}
 
 				catch (error) {
 
 					console.log("este es el error", (error))
-
 				}
 			},
 
@@ -75,28 +73,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ ...store, planets: data.results });
 						console.log(data)
 					}
-
 				}
 
 				catch (error) {
 
 					console.log("este es el error", (error))
-
 				}
 			},
 
-			addFavorite: (name)=> {
+			addFavorite: (name) => {
 				const store = getStore()
 				setStore({ ...store, favorites: [...store.favorites, name] });
-				
-			
+			},
+
+			updateFavorites: (updatedFavorites) => {
+				const store = getStore();
+				setStore({ ...store, favorites: updatedFavorites });
 			}
 		}
-
 	}
 
-
 };
-
 
 export default getState;
